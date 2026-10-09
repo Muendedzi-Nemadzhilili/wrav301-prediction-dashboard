@@ -419,11 +419,11 @@ if run:
     at_risk_df = merged[merged['Prediction'] == 'At-Risk'][display_cols].reset_index(drop=True)
 
     st.dataframe(
-        at_risk_df.style.applymap(
-            lambda v: 'background-color: #ffcccc; color: #991b1b; font-weight:bold'
-            if v == 'At-Risk' else '',
-            subset=['Prediction']
-        ),
+       at_risk_df.style.map(
+    lambda v: 'background-color: #ffcccc; color: #991b1b; font-weight:bold'
+    if v == 'At-Risk' else '',
+    subset=['Prediction']
+),
         use_container_width=True
     )
 
